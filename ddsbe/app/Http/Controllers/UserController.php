@@ -6,9 +6,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Traits\ApiResponser;
 
 class UserController extends Controller
 {
+    use ApiResponser;
+    
     private $request;
 
     public function __construct(Request $request)
@@ -18,11 +21,12 @@ class UserController extends Controller
 
     /*
     * Show data when executed successfully
-    */
+    --
     public function successResponse($data, $code = 200)
     {
         return response()->json(['data' => $data], $code);
     }
+    */
 
     /**
      * Return the list of users
