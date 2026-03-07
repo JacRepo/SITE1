@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -19,24 +18,14 @@ class UserController extends Controller
         $this->request = $request;
     }
 
-    /*
-    * Show data when executed successfully
-    --
-    public function successResponse($data, $code = 200)
-    {
-        return response()->json(['data' => $data], $code);
-    }
-    */
-
-    /**
-     * Return the list of users
-     */
-    public function getUsers()
+    //Old code
+    /*public function getUsers()
     {
         $users = User::all();
         return response()->json($users,200);
-    }
-
+    }*/
+    
+    //Get all users
     public function index()
     {
         $users = User::all();

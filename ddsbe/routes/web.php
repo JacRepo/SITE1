@@ -19,15 +19,13 @@ $router->get('/', function () use ($router) {
 
 // unsecure routes 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/users',['uses' => 'UserController@getUsers']);
+    $router->get('/users1',['uses' => 'UserController@getUsers']);
 });
 
-// more simple routes
-//$router->get('/users',['uses' => 'UserController@getUsers']); //found in pdf
-$router->get('/users', 'UserController@getUsers'); // get all users 
-//$router->get('/users', 'UserController@index');   // Option
-$router->post('/users', 'UserController@add');  // create new user 
-$router->get('/users/{id}', 'UserController@show'); // get user by id
-$router->put('/users/{id}', 'UserController@update'); // update user 
-$router->patch('/users/{id}', 'UserController@update'); // update user 
-$router->delete('/users/{id}', 'UserController@delete'); // delete 
+// more simple routes 
+$router->get('/users1', 'UserController@index');   // Get all users
+$router->post('/users1', 'UserController@add');  // create new user 
+$router->get('/users1/{id}', 'UserController@show'); // get user by id
+$router->put('/users1/{id}', 'UserController@update'); // update user 
+$router->patch('/users1/{id}', 'UserController@update'); // update user 
+$router->delete('/users1/{id}', 'UserController@delete'); // delete 

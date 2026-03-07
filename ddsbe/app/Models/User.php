@@ -5,7 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $table = 'users';
+    protected $table = 'users1';
+    
 // column sa table
     protected $fillable = 
         ['username', 'password', 'gender'];
