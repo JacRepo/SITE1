@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/run-migrations', function () {
+Route::get('/run-migrations', function () {
     Artisan::call('migrate', ['--force' => true]);
     return 'Migrations run successfully';
 });
