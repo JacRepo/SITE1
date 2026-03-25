@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -21,8 +22,9 @@ $router->get('/', function () use ($router) {
 $router->get('/test', function () {
     return 'OK';
 });
+
 $router->get('/run-migrations', function () {
-    Artisan::call('migrate', ['--force' => true]);
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
     return 'Migrations run successfully';
 });
 
