@@ -16,4 +16,5 @@ class User extends Model
         ['password',];
     
     public $timestamps = false;
+    protected $primaryKey = 'empID';
 }
