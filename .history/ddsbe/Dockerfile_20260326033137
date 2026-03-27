@@ -26,4 +26,4 @@ RUN composer install --no-interaction --prefer-dist
 EXPOSE 10000
 
 # Start the Laravel/Lumen server
-CMD php artisan migrate --force && php -S 0.0.0.0:10000 -t public
+CMD php -S 0.0.0.0:10000 -t public

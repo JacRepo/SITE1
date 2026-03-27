@@ -23,10 +23,6 @@ $router->get('/test', function () {
     return 'OK';
 });
 
-$router->get('/run-migrations', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-    return 'Migrations run successfully';
-});
 
 /*
 // unsecure routes 
