@@ -23,6 +23,15 @@ $router->get('/test', function () {
     return 'OK';
 });
 
+$router->get('/test-db', function () {
+    try {
+        DB::connection()->getPdo();
+        return "Connected successfully to database: " . DB::connection()->getDatabaseName();
+    } catch (\Exception $e) {
+        return "Could not connect to the database. Error: " . $e->getMessage();
+    }
+});
+
 
 /*
 // unsecure routes 
