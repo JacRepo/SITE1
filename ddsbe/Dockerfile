@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     libzip-dev \
-    && docker-php-ext-install zip pdo pdo_mysql
+    libpq-dev \  # Add PostgreSQL development files
+    && docker-php-ext-install zip pdo pdo_pgsql  # Change pdo_mysql to pdo_pgsql
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -26,4 +27,4 @@ RUN composer install --no-interaction --prefer-dist
 EXPOSE 10000
 
 # Start the Laravel/Lumen server
-CMD php artisan migrate --force && php -S 0.0.0.0:10000 -t public
+CMD php -S 0.0.0.0:10000 -t public
